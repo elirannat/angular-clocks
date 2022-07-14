@@ -1,0 +1,40 @@
+<div class="center alert-info">
+  <h1 class="text-center">Stop Watch</h1>
+  <h2>Click the stop button to stop the clock</h2>
+</div>
+<hr>
+
+<div class="center">
+  <div class="bg-black col-12 col-md-12 col-lg-9 center">
+    <div class="center text-danger fs-1">
+      {{ time.hours < 10 ? "0" + time.hours : time.hours }}
+      <span>:</span>
+    </div>
+    <div class="center text-danger fs-1">
+      {{ time.minutes < 10 ? "0" + time.minutes : time.minutes }}
+      <span>:</span>
+    </div>
+    <div class="center text-danger fs-1">
+      {{ time.seconds < 10 ? "0" + time.seconds : time.seconds }}
+      <span>:</span>
+    </div>
+    <div class="center text-danger fs-1">
+      {{
+          time.milliSeconds < 10 ? "0" + time.milliSeconds : time.milliSeconds
+        }}
+    </div>
+  </div>
+</div>
+<div class="center">
+  <div class="center my-3 alert-info rounded p-2 col-12 col-md-9 col-lg-6">
+    <div class="row">
+      <button class="btn btn-primary me-3 col-12 col-md-3 my-2" (click)="reset()">Reset
+      </button>
+      <button class="btn btn-danger me-3 col-12 col-md-3 my-2" (click)="handleInterval('stop')">Stop</button>
+      <button class="btn btn-success me-3 my-2 col-12 col-md-3"
+        (click)="Start('continue')">{{time.milliSeconds === 0 ? "Start" : "Continue" }}
+      </button>
+    </div>
+  </div>
+</div>
+</div>

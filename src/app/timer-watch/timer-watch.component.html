@@ -1,0 +1,28 @@
+<div class="center alert-info">
+  <h1 class="text-center">Timer Watch</h1>
+  <h2>Timer online app with alarm</h2>
+</div>
+<hr>
+
+<div class="center">
+  <div class="bg-black col-12 col-md-12 col-lg-9 center text-success">
+    <select (ngModel)="time" name="form-select" id="timerOptions">
+      <option value="hours">{{time.hours}}</option>
+      <option value="minutes">{{time.minutes}}</option>
+      <option value="seconds">{{time.seconds}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="center">
+  <div class="center my-3 alert-info rounded p-2 col-12 col-md-9 col-lg-6">
+    <div class="row">
+      <button class="btn btn-primary me-3 col-12 col-md-3 my-2" (click)="reset()">Reset
+      </button>
+      <button class="btn btn-danger me-3 col-12 col-md-3 my-2" (click)="handleInterval('stop')">Stop</button>
+      <button class="btn btn-success me-3 my-2 col-12 col-md-3"
+        (click)="Start('continue')">{{time.seconds === 0 ? "Start" : "Continue" }}
+      </button>
+    </div>
+  </div>
+</div>
